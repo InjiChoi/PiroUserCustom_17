@@ -11,7 +11,7 @@
             <li><a href="{% url 'users:log_out' %}">Logout</a></li>
         {% else %}
             <li><a href="{% url 'users:login' %}">Login</a></li>
-            <li><a href="">Signup</a></li>
+            <li><a href="{% url 'users:sign_up' %}">Signup</a></li>
         {% endif %}
 
         {% block content %}
