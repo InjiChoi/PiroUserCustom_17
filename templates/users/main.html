@@ -7,9 +7,12 @@
         <title>Document</title>
     </head>
     <body>
-        <li><a href="">Logout</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Signup</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'users:log_out' %}">Logout</a></li>
+        {% else %}
+            <li><a href="{% url 'users:login' %}">Login</a></li>
+            <li><a href="">Signup</a></li>
+        {% endif %}
 
         {% block content %}
         {% endblock content %}
